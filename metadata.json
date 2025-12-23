@@ -1,0 +1,5 @@
+{
+  "name": "Prevencar Vistorias",
+  "description": "O projeto tem como objetivo substituir totalmente as fichas de papel por um sistema eletrônico que registre vistorias, controle informações financeiras e gerencie funcionários. Ele permitirá cadastrar, consultar, alterar e excluir fichas de forma organizada. Todo o sistema poderá ser acessado tanto pelo site quanto pelo aplicativo.",
+  "requestFramePermissions": []
+}
