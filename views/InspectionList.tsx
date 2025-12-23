@@ -527,7 +527,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
                                         <button onClick={() => onView(item)} className="p-2 text-gray-400 hover:text-brand-blue"><Eye size={16}/></button>
                                         <button onClick={() => onEdit(item)} className="p-2 text-gray-400 hover:text-brand-blue"><Edit2 size={16}/></button>
                                         {!isVistoriador && (
-                                          <button onClick={() => onDelete(item.id)} className="p-2 text-gray-400 hover:text-brand-red"><Trash2 size={16}/></button>
+                                          <button onClick={() => { if (window.confirm('Tem certeza que deseja excluir esta ficha? Esta ação não pode ser desfeita.')) onDelete(item.id); }} className="p-2 text-gray-400 hover:text-brand-red"><Trash2 size={16}/></button>
                                         )}
                                     </div>
                                 </td>

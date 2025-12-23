@@ -263,7 +263,7 @@ export const Management: React.FC<ManagementProps> = ({
                                     <div className="w-10 h-10 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue font-black uppercase">{u.name.charAt(0)}</div>
                                     <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                         <button onClick={() => {setEditingUser(u); setUserForm(u);}} className="p-2 text-brand-blue hover:bg-blue-50 rounded-lg transition-colors"><Edit2 size={14}/></button>
-                                        <button onClick={() => onDeleteUser(u.id)} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={14}/></button>
+                                        <button onClick={() => { if (window.confirm('Tem certeza que deseja excluir este usuário?')) onDeleteUser(u.id); }} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={14}/></button>
                                     </div>
                                 </div>
                                 <p className="font-black text-gray-800 leading-tight">{u.name}</p>
@@ -391,7 +391,7 @@ export const Management: React.FC<ManagementProps> = ({
                                 </div>
                                 <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <button onClick={() => {setEditingIndication(ind); setIndicationForm(ind);}} className="p-2 text-brand-blue hover:bg-blue-50 rounded-lg transition-colors"><Edit2 size={14}/></button>
-                                    {isAdmin && <button onClick={() => onDeleteIndication(ind.id)} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={14}/></button>}
+                                    {isAdmin && <button onClick={() => { if (window.confirm('Tem certeza que deseja excluir este parceiro?')) onDeleteIndication(ind.id); }} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={14}/></button>}
                                 </div>
                             </div>
                             <p className="font-black text-gray-800 leading-tight mb-1">{ind.name}</p>
@@ -511,7 +511,7 @@ export const Management: React.FC<ManagementProps> = ({
                                 </div>
                                 <div className="flex gap-1">
                                     <button onClick={() => {setEditingService(s); setServiceForm(s);}} className="p-2 text-brand-blue hover:bg-blue-50 rounded-lg transition-colors"><Edit2 size={16}/></button>
-                                    {isAdmin && <button onClick={() => onDeleteService(s.id)} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={16}/></button>}
+                                    {isAdmin && <button onClick={() => { if (window.confirm('Tem certeza que deseja excluir este serviço?')) onDeleteService(s.id); }} className="p-2 text-brand-red hover:bg-red-50 rounded-lg transition-colors"><Trash2 size={16}/></button>}
                                 </div>
                             </div>
                         </div>
